@@ -287,21 +287,26 @@ button { font: inherit; }
 
 .blood-hero {
   width: 100%;
-  height: 520px;
-  overflow: hidden;
+
   background: #fff;
+
+  overflow: hidden;
 }
+
 
 .blood-hero-image {
   width: 100%;
-  height: 100%;
-
-  background:
-    url("assets/blood-donation-poster.jpg")
-    center center / cover
-    no-repeat;
 }
 
+
+.blood-hero-image img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
 
 /* =========================
    BLOOD INTRO
@@ -619,39 +624,71 @@ button { font: inherit; }
 @media (max-width: 900px) {
 
   .blood-hero {
-    height: 380px;
+    height: auto;
   }
+
+
+  .blood-hero-image {
+    width: 100%;
+  }
+
+
+  .blood-hero-image img {
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+  }
+
 
   .blood-intro-grid,
   .blood-two-col {
     grid-template-columns: 1fr;
+
     gap: 36px;
   }
 
+
   .blood-stats-card {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
   }
 
-  .blood-stats-card div:nth-child(2)::after {
+
+  .blood-stats-card
+  div:nth-child(2)::after {
     display: none;
   }
 
-  .blood-stats-card div:nth-child(1),
-  .blood-stats-card div:nth-child(2) {
-    border-bottom: 1px solid var(--line);
+
+  .blood-stats-card
+  div:nth-child(1),
+
+  .blood-stats-card
+  div:nth-child(2) {
+
+    border-bottom:
+      1px solid var(--line);
+
   }
+
 
   .blood-card-grid,
   .blood-gallery-grid {
+
     grid-template-columns: 1fr;
+
   }
+
 
   .blood-gallery img {
     height: auto;
   }
 
+
   .blood-cta-inner {
     align-items: flex-start;
+
     flex-direction: column;
   }
 
